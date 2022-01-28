@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Pogodynka.ViewModels" 
+             x:DataType="vm:AddToDatabaseViewModel"
+             x:Class="Pogodynka.AddToDatabasePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Editor Text="{Binding Description}" Placeholder="Opis" HeightRequest="170" MaxLength="250" Margin="20,20,20,0" BackgroundColor="LightGray"/>
+            <Button CornerRadius="100" Text="Dodaj zdjęcie" Margin="50,30" Command="{Binding TakePicture}"/>
+            <Label Text="{Binding PhotoState}" HorizontalTextAlignment="Center"/>
+            <Image Source="{Binding ImageSource}" HeightRequest="300" />
+            <Button CornerRadius="100" Text="Dodaj do dziennika" Margin="50, 10, 50, 0" BackgroundColor="LightSeaGreen" Command="{Binding AddToDatabase}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

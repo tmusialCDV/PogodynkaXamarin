@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Pogodynka.ViewModels"
+             x:DataType="vm:MainViewModel"
+             x:Class="Pogodynka.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#000000" Padding="24" CornerRadius="0">
+            <StackLayout>
+                <Label Text="Pogodynka v1" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                <Label Text="Made by Tobiasz Musiał" HorizontalTextAlignment="Center" TextColor="White" FontSize="15"/>
+            </StackLayout>
+        </Frame>
+        <Label Text="Wybierz z dostępnych opcji:" HorizontalTextAlignment="Center" TextColor="Black" FontSize="20"/>
+        <Button Text="Pobierz lokalizację za pomocą GPS" Margin="20,10,20,10" Command="{Binding GpsButton}"/>
+        <Label Text="- lub -" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18"/>
+        <Entry Text="{Binding CityEntry}" Placeholder="Podaj miasto" Margin="20,10,20,10"/>
+        <Button Text="Pogoda dla wpisanego miasta" Margin="60,0,60,10" Command="{Binding CityButton}"/>
+        <Label Text="{Binding State}" TextColor="Red" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,60,0,0"/>
+
+        <FlexLayout JustifyContent="SpaceAround" AlignItems="End" VerticalOptions="EndAndExpand" Margin="0,0,0,40">
+            <Button Text="Wpisy w dzienniku" Command="{Binding GetDatabase}"/>
+            <Button Text="Wyloguj się" Command="{Binding Logout}"/>
+        </FlexLayout>
+
+    </StackLayout>
+</ContentPage>

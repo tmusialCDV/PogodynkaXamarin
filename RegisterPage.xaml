@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Pogodynka.ViewModels"
+             x:Class="Pogodynka.RegisterPage">
+
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Zarejestruj konto" FontSize="Large" Margin="0,30,0,30" HorizontalTextAlignment="Center"/>
+            <Entry Text="{Binding Email}" Placeholder="Email" Margin="40,0" />
+            <Entry Text="{Binding Password}" Placeholder="Hasło" Margin="40,0" IsPassword="True"/>
+            <Entry Text="{Binding ConfirmPassword}" Placeholder="Powtórz hasło" Margin="40,0" IsPassword="True"/>
+            <Label Text="{Binding RegisterInfo}" FontSize="Medium" Margin="0,0,0,0" TextColor="{Binding RegisterInfoColor}" HorizontalTextAlignment="Center"/>
+            <Button Text="Stwórz konto" Margin="70,20" CornerRadius="50" BackgroundColor="LightSeaGreen" Command="{Binding RegisterCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

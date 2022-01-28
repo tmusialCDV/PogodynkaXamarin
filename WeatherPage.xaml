@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Pogodynka.ViewModels" 
+             x:DataType="vm:WeatherViewModel"
+             x:Class="Pogodynka.WeatherPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Pogoda dla:" FontSize="Large" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding InsertedCity}" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            
+            
+            <Frame Background="#dbdbdb" Margin="40,20" CornerRadius="100">
+                <FlexLayout Direction="Column">
+                    <Image Source="{Binding ImageSource}" Scale="4" Margin="20"/>
+                    <Label Text="{Binding Description}" FontSize="Large" HorizontalTextAlignment="Center"/>
+                </FlexLayout>
+            </Frame>
+            <FlexLayout Background="#dbdbdb">
+                <Label Text="Aktualna temperatura: " FontSize="Large" TextColor="Black" Margin="20,0,0,0"/>
+                <Label Text="{Binding Temp}" FontSize="Large" TextColor="Black"/>
+                <Label Text="°C" FontSize="Large" TextColor="Black"/>
+            </FlexLayout>
+            <FlexLayout Background="#dbdbdb">
+                <Label Text="Odczuwalna temperatura: " FontSize="Large" TextColor="Black" Margin="20,0,0,0"/>
+                <Label Text="{Binding Temp}" FontSize="Large" TextColor="Black"/>
+                <Label Text="°C" FontSize="Large" TextColor="Black"/>
+            </FlexLayout>
+            <FlexLayout Background="#dbdbdb" Margin="0,20,0,0">
+                <Label Text="Najmniejsza temperatura: " FontSize="Large" TextColor="Black" Margin="20,0,0,0"/>
+                <Label Text="{Binding MinTemp}" FontSize="Large" TextColor="Black"/>
+                <Label Text="°C" FontSize="Large" TextColor="Black"/>
+            </FlexLayout>
+            <FlexLayout Background="#dbdbdb">
+                <Label Text="Najwyższa temperatura: " FontSize="Large" TextColor="Black" Margin="20,0,0,0"/>
+                <Label Text="{Binding MaxTemp}" FontSize="Large" TextColor="Black"/>
+                <Label Text="°C" FontSize="Large" TextColor="Black"/>
+            </FlexLayout>
+            <FlexLayout Background="#dbdbdb" Margin="0,20,0,0">
+                <Label Text="Ciśnienie atmosferyczne: " FontSize="Large" TextColor="Black" Margin="20,0,0,0"/>
+                <Label Text="{Binding Pressure}" FontSize="Large" TextColor="Black"/>
+                <Label Text=" hPa" FontSize="Large" TextColor="Black"/>
+            </FlexLayout>
+            <FlexLayout Background="#dbdbdb">
+                <Label Text="Wilgotność powietrza: " FontSize="Large" TextColor="Black" Margin="20,0,0,0"/>
+                <Label Text="{Binding Humidity}" FontSize="Large" TextColor="Black"/>
+                <Label Text=" %" FontSize="Large" TextColor="Black"/>
+            </FlexLayout>
+            <Button Text="Dodaj wpis do dziennika" Margin="40,40,40,0" CornerRadius="50" BackgroundColor="DarkSeaGreen" Command="{Binding AddToDatabase}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

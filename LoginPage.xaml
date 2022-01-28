@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Pogodynka.ViewModels"
+             x:Class="Pogodynka.LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <StackLayout>
+        <Label Text="Logowanie" FontSize="Large" Margin="0,30,0,30" HorizontalTextAlignment="Center"/>
+        <Entry Text="{Binding Email}" Placeholder="Email" Margin="40,0" />
+        <Entry Text="{Binding Password}" Placeholder="Hasło" Margin="40,0" IsPassword="True"/>
+        <Label Text="{Binding LoginInfo}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Red"/>
+        <Button Text="Zaloguj" Margin="70,20" CornerRadius="50" BackgroundColor="LightSeaGreen" Command="{Binding LoginCommand}"/>
+        <Button Text="Stwórz nowe konto" Margin="70,80" CornerRadius="50" Clicked="Register_Button_Clicked"/>
+    </StackLayout>
+
+
+</ContentPage>
